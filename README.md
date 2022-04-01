@@ -7,3 +7,6 @@ Without using outside libraries, this script solves the pagerank problem for a g
 
 ## allCode.py
 Contains all the code, datapreprocessing, and functions to display results, view the page links, rank the page links, and compare time splits.  
+
+#### Why
+The solver is intuitive, and stores data how the data tends to be gathered in the first place, with less steps for error in the matrix/notation interpretation O(n^3) linear algebra solution.
