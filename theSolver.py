@@ -2,12 +2,9 @@
 Make the non-symetric nxn matrix A corresponding to an adjacency matrix
 """
 n = len(A)
-
-# the damping parameter / beta
-p = 0.85
+p = 0.85  # the damping parameter / beta
 not0 = (1-p)/float(n)
 
-# the iterative solver's "Link"
 class Link(object):
     def __init__(self, ind):
         self.ind = ind
@@ -18,7 +15,6 @@ class Link(object):
     def iterate(self):
         self.page_rank = p * sum([link.page_rank/len(link.ri) for link in self.ci]) + not0
 
-# the iterative solver's "Matrix"
 class Matrix(object):
     def __init__(self, inds):
         self.links = []
@@ -45,8 +41,4 @@ def run_iterations(mtx, n):
 
 matrix = Matrix([ind for ind in range(n)])
 matrix.initialize()
-
-start = default_timer()
-run_iterations(matrix, 50)
-stop = default_timer()
-print(f'Iterative solution took: {stop - start}s')
+run_iterations(matrix, 100)
