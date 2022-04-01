@@ -1,8 +1,10 @@
-# FastIterativePageRank
-theSolver.py : contains the two classes that solve the pagerank problem iteratively
+# FastIterativePageRank  
 
-allCode.py : contains all the code, datapreprocessing, and functions to display results, view the page links, rank the page links, and compare time splits
+The pagerank values become more accurate with more iterations. For the data used, 50 iterations suffices to rank the pages, and for comparison the solution calculaed by SVD (numpy's functions) is about 50% slower. The solver solves the pageranks at around the same speed as SKLearn's LinearRegression (uses blas/lapack). Iterations can be paused and stacked.
 
-The solver approximates more accurately with higher iterations. For the data, 50 iterations suffices to rank the pages, and SVD with numpy functions is about 50% slower.
+## theSolver.py
+  Without using outside libraries, this script solves the pagerank problem for an adjacency matrix A which is not given. It contains the two classes that solve the pagerank problem iteratively and the parameters.
 
-Iterations can be paused and stacked.
+## allCode.py  
+    Contains all the code, datapreprocessing, and functions to display results, view the page links, rank the page links, and compare time splits
+
